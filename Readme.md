@@ -20,7 +20,7 @@ To use this library, clone the repository and build it using Gradle.
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ipapi-java.git
+git clone https://github.com/rezwanahmedsami/ipapi-java.git
 cd ipapi-java
 ```
 

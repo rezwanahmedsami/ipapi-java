@@ -13,6 +13,9 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: write  # Grant write access to contents for artifact submission
+
 jobs:
   build:
 

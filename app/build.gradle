@@ -44,36 +44,3 @@ test {
         showStandardStreams = true // This will display standard output
     }
 }
-
-
-// publishing {
-//     publications {
-//         mavenJava(MavenPublication) {
-//             from components.java
-
-//             pom {
-//                 name = 'ipapi-java'
-//                 description = 'Java library to access IP data via API for ipquery.io'
-//                 url = 'https://github.com/rezwanahmedsami/ipapi-java'
-//                 licenses {
-//                     license {
-//                         name = 'MIT License'
-//                         url = 'https://opensource.org/licenses/MIT'
-//                     }
-//                 }
-//                 developers {
-//                     developer {
-//                         id = 'rezwanahmedsami'
-//                         name = 'Rezwan Ahmed Sami'
-//                         email = 'samiahmed0f0@gmail.com'
-//                     }
-//                 }
-//             }
-//         }
-//     }
-//     repositories {
-//         maven {
-//             url = uri("https://repo.maven.apache.org/maven2")
-//         }
-//     }
-// }

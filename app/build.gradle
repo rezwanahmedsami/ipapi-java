@@ -1,0 +1,79 @@
+plugins {
+    // Apply the Java Library plugin to define the project as a library
+    id 'java-library'
+}
+
+group = 'io.ipquery'  // Set your group based on the domain
+version = '1.0.0'     // Initial version
+
+repositories {
+    // Use Maven Central for resolving dependencies
+    mavenCentral()
+}
+
+dependencies {
+    // Include Jackson for JSON parsing
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.1'
+
+    // Include HttpClient (comes built-in in Java 11+)
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+
+    // Include JUnit for unit testing
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+
+    // Add any other dependencies your library may need here
+    // e.g., Guava or others that your library uses
+    // implementation 'com.google.guava:guava:31.1-jre'
+}
+
+java {
+    // Set the Java version compatibility for your library
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for running tests
+    useJUnitPlatform()
+}
+
+test {
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED", "STANDARD_OUT", "STANDARD_ERROR"
+        showStandardStreams = true // This will display standard output
+    }
+}
+
+
+// publishing {
+//     publications {
+//         mavenJava(MavenPublication) {
+//             from components.java
+
+//             pom {
+//                 name = 'ipapi-java'
+//                 description = 'Java library to access IP data via API for ipquery.io'
+//                 url = 'https://github.com/rezwanahmedsami/ipapi-java'
+//                 licenses {
+//                     license {
+//                         name = 'MIT License'
+//                         url = 'https://opensource.org/licenses/MIT'
+//                     }
+//                 }
+//                 developers {
+//                     developer {
+//                         id = 'rezwanahmedsami'
+//                         name = 'Rezwan Ahmed Sami'
+//                         email = 'samiahmed0f0@gmail.com'
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     repositories {
+//         maven {
+//             url = uri("https://repo.maven.apache.org/maven2")
+//         }
+//     }
+// }
